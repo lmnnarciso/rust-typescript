@@ -1,24 +1,5 @@
-struct Custom {
-    age: usize,
-    name: String,
+fn practice(nums: Vec<usize>, index: usize) -> usize {
+    return nums.get(index).unwrap_or(&index) * 5;
 }
 
-enum Item {
-    Number(usize),
-    String(String),
-    MyCustom(Custom),
-}
-
-fn append(items: &mut Vec<Item>) {
-    items.push(Item::String("hello, Fem".to_string()));
-}
-
-fn multiply(num: Option<usize>) -> Option<usize> {
-    return Some(num? * 5);
-}
-
-fn main() {
-    let foo = multiply(None);
-
-    println!("{:?}", foo)
-}
+fn main() {}

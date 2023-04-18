@@ -1,6 +1,3 @@
-function some(item: number | undefined): number | undefined {
-  if (typeof item === "number") {
-    return item * 5;
-  }
-  return undefined;
+function practice(nums: number[], index: number): number {
+  return (nums[index] ?? index) * 5;
 }

@@ -7,4 +7,7 @@
 var fs = require("fs");
 
 var data = fs.readFileSync("lines", "utf8");
-data = data.split("\n").map((x: string) => console.log(x));
+data = data
+  .split("\n")
+  .filter((_: any, index: number) => index % 2 === 0)
+  .map((x: string) => console.log(x));

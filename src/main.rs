@@ -1,10 +1,36 @@
-fn main() {
-    let file = std::fs::read_to_string("lines").unwrap();
+enum Color {
+    Red,
+    Green,
+    Blue,
+}
 
-    file.lines()
-        .enumerate()
-        .filter(|(idx, _)| idx % 2 == 0)
-        .skip(2)
-        .take(2)
-        .for_each(|(_, line)| println!("{}", line))
+impl Color {
+    fn is_green(&self) -> bool {
+        if let Color::Green = &self {
+            return true;
+        }
+        return false;
+    }
+
+    fn is_green_parts(&self) -> bool {
+        match self {
+            Color::Red => false,
+            Color::Green => false,
+            Color::Blue => true,
+        }
+    }
+}
+
+fn print_color(color: Color) {
+    match color {
+        Color::Red => print!("red"),
+        Color::Blue => println!("blue"),
+        Color::Green => println!("green"),
+    }
+}
+
+fn main() {
+    let foo: Color = Color::Green;
+
+    println!("{}", foo.is_green());
 }

@@ -4,10 +4,18 @@
 //   console.log(`${x + 1}`);
 // }
 
-var fs = require("fs");
+type Custom = {
+  age: number;
+  name: string;
+};
 
-var data = fs.readFileSync("lines", "utf8");
-data = data
-  .split("\n")
-  .filter((_: any, index: number) => index % 2 === 0)
-  .map((x: string) => console.log(x));
+type Item = number | string | Custom;
+
+function append(items: Item[]) {
+  items.push("hello fem!");
+}
+const item: Item[] = [];
+
+const numbers: number[] = [];
+
+append(numbers);

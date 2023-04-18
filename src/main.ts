@@ -1,21 +1,6 @@
-// let arr = [1, 2, 3];
-
-// for (const x of arr) {
-//   console.log(`${x + 1}`);
-// }
-
-type Custom = {
-  age: number;
-  name: string;
-};
-
-type Item = number | string | Custom;
-
-function append(items: Item[]) {
-  items.push("hello fem!");
+function some(item: number | undefined): number | undefined {
+  if (typeof item === "number") {
+    return item * 5;
+  }
+  return undefined;
 }
-const item: Item[] = [];
-
-const numbers: number[] = [];
-
-append(numbers);
